@@ -1,0 +1,18 @@
+#Use an official Python image as the base image
+FROM python:3.8-slim
+
+# Set the working directory within the container to the application's directory
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY app.py /app
+
+# Install any required dependencies for the application
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose the port on which the application runs within the Docker container (8080)
+EXPOSE 8080
+
+# Specify the command to run the application when the container starts
+CMD ["python", "app.py"]
+
