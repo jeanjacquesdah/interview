@@ -1,0 +1,33 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                // Replace 'build.sh' with your actual build script or command
+                sh 'chmod +x build.sh && ./build.sh'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Add an echo statement for testing
+                echo 'Hello World from Test Stage'
+
+                // Replace 'test.sh' with your actual test script or command
+                sh 'chmod +x test.sh && ./test.sh'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Add an echo statement for deployment
+                echo 'Hello World from Deploy Stage'
+
+                // Replace 'deploy.sh' with your actual deployment script or command
+                sh 'chmod +x deploy.sh && ./deploy.sh'
+            }
+        }
+    }
+}
+
